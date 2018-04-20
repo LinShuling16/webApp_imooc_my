@@ -4,9 +4,133 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
     <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .component{
+            width: 50%;
+            height: 50px;
+            margin-bottom: 20px;
+            background: #ccc;
+        }
+        .hide{
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    
+    <!-- 用于验证 fullpage.js 切换野蛮，以及内容组织结构可用，组件能够进行动画 -->
+    <div id="h5">
+        <div class="page section" id="page-1">
+            <div class="component log hide">logo</div>
+            <div class="component slogan hide">slogan</div>
+        </div>
+        <div class="page section" id="page-2">
+            <div class="component desc hide">描述</div>
+        </div>
+        <div class="page section" id="page-3">
+            <div class="component bar hide">柱状图</div>
+        </div>
+    </div>
+    <script src='./../js/lib/jquery.js'></script>
+    <script src='./../js/lib/jquery-ui.min.js'></script>
+    <script src='./../js/lib/jquery.fullPage.js'></script>
+    <script>
+    /*
+        onLeave (index, nextIndex, direction)
+        一旦用户离开某个节，过渡到新节，就会触发此回调。 返回“false”将在移动发生之前取消移动。
+        参数：
+        index离开节的索引。 从1开始。
+        nextIndex：目标节的索引。 从1开始。
+        direction：取决于滚动方向，取值为up或down。
+        例如：
+        $('#fullpage').fullpage({
+            onLeave: function(index, nextIndex, direction){
+                var leavingSection = $(this);
+                //离开第二节后
+                if(index == 2 && direction =='down'){
+                    alert("前往第3节！");
+                }
+                else if(index == 2 && direction == 'up'){
+                    alert("前往第1节！");
+                }
+            }
+        });
+        触发之前取消滚动
+        您可以通过在onLeave回调函数上返回`false来取消滚动：
+        $('#fullpage').fullpage({
+            onLeave: function(index, nextIndex, direction){
+                //如果目标是第三节，它将不会滚动
+                if(nextIndex == 3){
+                    return false;
+                }
+            }
+        });
+    */
+    /*
+        afterLoad (anchorLink, index)
+        滚动结束之后，一旦加载了节，就会触发回调。参数：
+        anchorLink：该部分对应的anchorLink。
+        `index：该部分的索引。 从1开始。
+        如果在插件中没有定义anchorLink，那么index参数将是唯一使用的参数。
+        例如：
+        $('#fullpage').fullpage({
+            anchors: ['firstPage', 'secondPage', 'thirdPage', 'fourthPage', 'lastPage'],
+            afterLoad: function(anchorLink, index){
+                var loadedSection = $(this);
+                //使用 index
+                if(index == 3){
+                    alert("第3节停止加载");
+                }
+                //使用 anchorLink
+                if(anchorLink == 'secondSlide'){
+                    alert("第2节停止加载");
+                }
+            }
+        });
+    */
+        $(function(){
+            $('#h5').fullpage({
+                'sectionsColor' : ['#254875', '#00ff00', '#695684'],
+                /*注意这里的index是从 1 开始的*/
+                onLeave : function(index, nextIndex, direction){
+                    $('#h5').find('.page').eq(index-1).trigger('onLeave');
+                    // debugger;
+                },
+                afterLoad : function(anchorLink, index){
+                     $('#h5').find('.page').eq(index-1).trigger('onLoad');
+                    // debugger;
+                }
+            });
+            /*
+                (1) 这里监听的事件'onLeave',不是原生的事件，所以在测试时需要主动触发:$('.page').trigger('onLeave');
+                $('.page').eq(0).trigger('onLeave');
+                (2)
+                注意这里的监听的事件名称是一样的，会有事件冒泡，会出现死循环。
+                可以用trigerHandler()或者在相应函数执行后return false;
+            */
+            $('.page').on('onLeave',function(){
+                console.log($(this).attr('id'), '==>>', 'onLeave');
+                $(this).find('.component').trigger('onLeave');
+
+            })
+             $('.page').on('onLoad',function(){
+                console.log($(this).attr('id'), '==>>', 'onLoad');
+                $(this).find('.component').trigger('onLoad');
+            })
+
+            $('.component').on('onLoad',function(){
+                $(this).fadeIn();
+                return false;
+            })
+            $('.component').on('onLeave',function(){
+                $(this).fadeOut();
+                return false;
+            })
+        })
+    </script>
 </body>
 <script>
     
