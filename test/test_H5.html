@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+    <link rel="stylesheet" href="./../css/H5.css">
+    <link rel="stylesheet" href="./../css/H5ComponentBase.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src='./../js/lib/jquery.js'></script>
+    <script src='./../js/lib/jquery-ui.min.js'></script>
+    <script src='./../js/lib/jquery.fullPage.js'></script>
+
+    <script src='./../js/H5ComponentBase.js'></script>
+    <script src='./../js/H5.js'></script>
+
+    <!-- 测试内容组织功能，测试页面切换及组件切换 -->
+    <!-- 内容组织管理，有可能会加载若干个资源 -->
+    <script>
+        $(function(){
+            var h5 = new H5();
+            //链式调用方法
+           /* 
+
+            h5
+            .addPage('face')
+                .addComponent('logo',{text:'logo'})
+                .addComponent('slogan',{text:'slogan'})
+            .addPage('desc')
+                .addComponent('caption',{text:'核心理念'})
+            .addPage('page-3')
+                .addComponent('caption',{text:'课程分布'})
+
+            */
+             
+
+            h5
+            .addPage('face','首页')
+                // .addComponent('logo',{text:'logo'})
+                // .addComponent('slogan',{text:'slogan'})
+            .addPage('desc','商品')
+                // .addComponent('caption',{text:'核心理念'})
+            .addPage('page-3','价格')
+                // .addComponent('caption',{text:'课程分布'})
+            .loader(['img...']);
+
+            
+        
+
+        })
+    </script>
+</body>
+</html>
