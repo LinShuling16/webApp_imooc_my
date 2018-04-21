@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
     <link rel="stylesheet" href="./../css/H5.css">
     <link rel="stylesheet" href="./../css/H5ComponentBase.css">
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -38,16 +44,50 @@
 
             h5
             .addPage('face','首页')
-                // .addComponent('logo',{text:'logo'})
-                // .addComponent('slogan',{text:'slogan'})
+                .addComponent('logo',{
+                    text:'logo',
+                    width:400,
+                    height:200,
+                    center:true,
+                    css   :{
+                        backgroundColor:'#ccc',
+                        top    : 200
+                    }
+                })
+                .addComponent('slogan',{
+                    text:'slogan',
+                    width:400,
+                    height:200,
+                    center:true,
+                    css   :{
+                        backgroundColor:'#ccc',
+                        top    : 320
+                    }
+                })
             .addPage('desc','商品')
-                // .addComponent('caption',{text:'核心理念'})
+                .addComponent('caption',{
+                    text:'核心理念',
+                    width:400,
+                    height:200,
+                    center:true,
+                    css   :{
+                        backgroundColor:'#ccc',
+                        top    : 100
+                    }
+                })
             .addPage('page-3','价格')
-                // .addComponent('caption',{text:'课程分布'})
+                .addComponent('caption',{
+                    text:'课程分布',
+                    width:400,
+                    height:200,
+                    center:true,
+                    css   :{
+                        backgroundColor:'#ccc',
+                        top    : 320
+                    }
+                })
             .loader(['img...']);
 
-            
-        
 
         })
     </script>
