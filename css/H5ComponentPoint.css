@@ -1,0 +1,28 @@
+/*
+* @Author: linshuling
+* @Date:   2018-04-20 14:23:40
+* @Last Modified by:   linshuling
+* @Last Modified time: 2018-05-18 16:36:03
+*/
+/* 散点图表组件样式 */
+.h5_component_point{
+  background-color: #fff;
+}
+.h5_component_point .point{
+    position: absolute;
+    display: block;
+    background-color: #ccc;
+    border-radius: 50%;
+}
+.h5_component_point .name{
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    top:50%;
+    margin-top: -15px;
+    font-size: 22px;
+}
+.h5_component_point .per{
+    font-size: .5em;
+}
