@@ -40,8 +40,6 @@
                 .addComponent('caption',{text:'课程分布'})
 
             */
-             
-
             h5
             .addPage('face','首页')
                 .addComponent('logo',{
@@ -51,8 +49,11 @@
                     center:true,
                     css   :{
                         backgroundColor:'#ccc',
-                        top    : 200
-                    }
+                        top    : 200,
+                        opacity :0
+                    },
+                    animateIn:{opacity:1},
+                    animateOut:{opacity:0}
                 })
                 .addComponent('slogan',{
                     text:'slogan',
@@ -87,7 +88,6 @@
                     }
                 })
             .loader(['img...']);
-
 
         })
     </script>

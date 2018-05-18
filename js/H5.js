@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-04-21 14:26:28
+* @Last Modified time: 2018-05-18 14:52:19
 */
 /*内容管理对象*/
 var H5 = function(){
@@ -61,6 +61,7 @@ var H5 = function(){
                 $(this).find('.h5_component').eq(index-1).trigger('onLoad');
             }
         });
+        this.page[0].find('.h5_component').trigger('onLoad');
         this.el.show();
     }
 }
