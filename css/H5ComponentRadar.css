@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:23:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-21 15:41:07
+* @Last Modified time: 2018-05-21 17:19:53
 */
 /* 雷达图组件 */
 .h5_component_radar{
@@ -14,4 +14,9 @@
     top:0; /* 用canvas做画图，会进行分层，用用到z-index*/
     width: 100%;
     height: 100%;
+}
+.h5_component_radar .text{
+    position: absolute;
+    font-size: 12px;
+    transition: all 1s;
 }
