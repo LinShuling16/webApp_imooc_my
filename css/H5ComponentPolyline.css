@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:23:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-19 15:31:40
+* @Last Modified time: 2018-05-21 10:22:55
 */
 /* 柱组件样式 */
 .h5_component_polyline{
@@ -22,5 +22,14 @@
     bottom:-20px;
     height: 20px;
     line-height: 20px;
+    /* Chrome 浏览器不能显示小于12px 的字体，所以只能用缩放。*/
     transform:scale(.8);
+    -webkit-transition:all 1s 1.6s;
+    -webkit-opacity: 0;
+}
+.h5_component_polyline_load .text{
+    -webkit-opacity: 1;
+}
+.h5_component_polyline_leave .text{
+    -webkit-opacity: 0;
 }
