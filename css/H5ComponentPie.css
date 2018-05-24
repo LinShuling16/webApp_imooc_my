@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:23:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-21 17:46:36
+* @Last Modified time: 2018-05-24 10:57:18
 */
 /* 雷达图组件 */
 .h5_component_pie{
@@ -17,6 +17,9 @@
 }
 .h5_component_pie .text{
     position: absolute;
+    height: 24px;
     font-size: 12px;
+    text-align: center;
+    z-index: 99;
     transition: all 1s;
 }
