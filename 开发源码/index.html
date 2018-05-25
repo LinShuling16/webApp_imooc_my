@@ -49,6 +49,9 @@
             margin : 0;
             padding: 0;
         }
+        .h5_page{
+             background-image: url("imgs/page_bg.png");
+        }
         /* 首页样式 */
         .h5_page_face{
             background-image: url("imgs/face_bg.png");
@@ -68,6 +71,17 @@
             70%{ transition: rotate(0deg) }
             100%{ transition: rotate(0deg) }  
         }
+        /* 内容页标题 */
+        .h5_component_name_caption{
+            background-image: url("./imgs/page_caption_bg.png");
+            width: 250px;
+            height: 62px;
+            text-align: center;
+            line-height: 42px;
+            font-size: 20px;
+            top:66px;
+            color: #fff;
+        }
     </style>
 
     <script>
@@ -85,23 +99,23 @@
                         css : {opacity:0},
                         animateIn  : {top : 113,opacity:1},
                         animateOut : {top : 0, opacity : 0},
-                        delay:1000
+                        // delay:1000
                     })
                     .addComponent('slogan',{
                         center : true,
                         width :  365,
                         height : 100,
                         bg : './imgs/face_slogan.png',
-                        css : {top : 208, opacity:0},
+                        css : {opacity:0,top : 208, },
                         animateIn  : {left :'50%',opacity :1},
-                        animateOut : {left :'0%', opacity :0},
-                        delay:2000
+                        animateOut : {left :0, opacity :0},
+                        // delay:2000
                     })
                     .addComponent('face_img_left',{
                         width :  346,
                         height : 494,
                         bg : './imgs/face_img_left.png',
-                        css : {left :-50, bottom:-50,opacity:0 },
+                        css : {opacity:0,left :-50, bottom:-50 },
                         animateIn  : {left:0,bottom:0,opacity:1},
                         animateOut : {left :-50, bottom:-50,opacity:0 },
                         // delay:1500
@@ -110,12 +124,61 @@
                         width :  324,
                         height : 450,
                         bg : './imgs/face_img_right.png',
-                        css : {right:-50, bottom:-50, opacity:0},
+                        css : {opacity:0, right:-50, bottom:-50},
                         animateIn  : {right:0, bottom:0, opacity:1},
                         animateOut : {right:-50, bottom:-50, opacity:0},
                         // delay:2000
                     })
-                .loader();
+                .addPage()
+                    .addComponent('caption',{text:'核心理念'})
+                    .addComponent('text',{
+                        width:500,
+                        height:30,
+                        center:true,
+                        text:'IT教育网=只学有用的',
+                        css : {
+                            opacity :0,
+                            textAlign:'center',
+                            color:'red',
+                            fontSize:'26px'
+                        },
+                        animateIn:{opacity:1,top:160},
+                        animateOut:{opacity:0,top:240}
+                    })
+                    .addComponent('description',{
+                        center:true,
+                        width : 520,
+                        height: 302,
+                        bg:'imgs/description_bg.png',
+                        css:{
+                            // opacity:0,
+                            padding:'15px 10px 10px 10px',
+                            color:'#fff',
+                            fontSize:'15px',
+                            lineHeight:'18px',
+                            textAlign:'justify',
+                            top:240
+                        },
+                        text:'席慕容-席慕蓉,当代著名画家、诗人、散文家。祖籍内蒙古察哈尔盟明安旗,是蒙古族王族之后。席慕容-席慕蓉,当代著名画家、诗人、散文家。祖籍内蒙古察哈尔盟明安旗,是蒙古族王族之后。席慕容-席慕蓉,当代著名画家、诗人、散文家',
+                        animateIn:{opacity:1,top:200},
+                        animateOut:{opacity:0,top:240},
+                        delay:500
+                    })
+                    .addComponent('people',{
+                        center:true,
+                        width:515,
+                        height:305,
+                        bg:'./imgs/p1_people.png',
+                        css:{
+                            // opacity:0,
+                            bottom:50,
+
+                        },
+                        animateIn:{opacity:1,bottom:50},
+                        animateOut:{opacity:0,bottom:0},
+                        delay:1000
+                    })
+                .loader(2);
             }
         }
         $(function(){

@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-25 09:47:08
+* @Last Modified time: 2018-05-25 11:07:25
 */
 /*基本图文组件对象*/
 var H5ComponentBase = function(name, cfg){
@@ -31,21 +31,20 @@ var H5ComponentBase = function(name, cfg){
     //其他设置
     //监听当前组价对象component事件
     component.on('onLoad',function(){
-
+       
         setTimeout(function(){
             component.addClass(cls+'_load').removeClass(cls+'_leave');
-            //animate()是jQuery的动画方法
-            cfg.animateIn && component.animate(cfg.animateIn);
-        }, cfg.delay || 0);
+            cfg.animateIn && component.animate( cfg.animateIn );
+        },cfg.delay || 0)
 
         return false;
     })
     component.on('onLeave',function(){
+
         setTimeout(function(){
             component.addClass(cls+'_leave').removeClass(cls+'_load');
-            cfg.animateOut && component.animate(cfg.animateOut);
-        
-        },cfg.delay || 0)
+            cfg.animateOut && component.animate( cfg.animateOut );
+         },cfg.delay || 0)
         return false;
     })
 
