@@ -49,6 +49,25 @@
             margin : 0;
             padding: 0;
         }
+        /* 首页样式 */
+        .h5_page_face{
+            background-image: url("imgs/face_bg.png");
+        }
+        /* 标题抖动 */
+        .h5_component_name_slogan{
+            -webkit-animation:rock 2s infinite 5s;
+        }
+        @-webkit-keyframes rock{
+            0%{ transition: rotate(0deg) }
+            5%{ transition: rotate(3deg) }
+            10%{ transition: rotate(-4deg) }
+            15%{ transition: rotate(3deg) }
+            20%{ transition: rotate(-2deg) }
+            25%{ transition: rotate(1deg) }
+            30%{ transition: rotate(-1deg) }
+            70%{ transition: rotate(0deg) }
+            100%{ transition: rotate(0deg) }  
+        }
     </style>
 
     <script>
@@ -57,53 +76,46 @@
                var h5 = new H5();
 
                h5
-                .addPage('face','首页')
+                .addPage('face')
                     .addComponent('logo',{
-                        text:'logo',
-                        width:400,
-                        height:200,
-                        center:true,
-                        css   :{
-                            backgroundColor:'#ccc',
-                            top    : 200,
-                            opacity :0
-                        },
-                        animateIn:{opacity:1},
-                        animateOut:{opacity:0}
+                        center : true,
+                        width :  422,
+                        height : 106,
+                        bg : './imgs/face_logo.png',
+                        css : {opacity:0},
+                        animateIn  : {top : 113,opacity:1},
+                        animateOut : {top : 0, opacity : 0},
+                        delay:1000
                     })
                     .addComponent('slogan',{
-                        text:'slogan',
-                        width:400,
-                        height:200,
-                        center:true,
-                        css   :{
-                            backgroundColor:'#ccc',
-                            top    : 320
-                        }
+                        center : true,
+                        width :  365,
+                        height : 100,
+                        bg : './imgs/face_slogan.png',
+                        css : {top : 208, opacity:0},
+                        animateIn  : {left :'50%',opacity :1},
+                        animateOut : {left :'0%', opacity :0},
+                        delay:2000
                     })
-                .addPage('desc','商品')
-                    .addComponent('caption',{
-                        text:'核心理念',
-                        width:400,
-                        height:200,
-                        center:true,
-                        css   :{
-                            backgroundColor:'#ccc',
-                            top    : 100
-                        }
+                    .addComponent('face_img_left',{
+                        width :  346,
+                        height : 494,
+                        bg : './imgs/face_img_left.png',
+                        css : {left :-50, bottom:-50,opacity:0 },
+                        animateIn  : {left:0,bottom:0,opacity:1},
+                        animateOut : {left :-50, bottom:-50,opacity:0 },
+                        // delay:1500
                     })
-                .addPage('page-3','价格')
-                    .addComponent('caption',{
-                        text:'课程分布',
-                        width:400,
-                        height:200,
-                        center:true,
-                        css   :{
-                            backgroundColor:'#ccc',
-                            top    : 320
-                        }
+                    .addComponent('face_img_right',{
+                        width :  324,
+                        height : 450,
+                        bg : './imgs/face_img_right.png',
+                        css : {right:-50, bottom:-50, opacity:0},
+                        animateIn  : {right:0, bottom:0, opacity:1},
+                        animateOut : {right:-50, bottom:-50, opacity:0},
+                        // delay:2000
                     })
-                .loader(['img...']);
+                .loader();
             }
         }
         $(function(){

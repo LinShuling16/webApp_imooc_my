@@ -2,11 +2,11 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:23:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-04-20 15:41:54
+* @Last Modified time: 2018-05-25 09:33:42
 */
 .h5_component{
-    background-color:#fff;
     background-size:100%;
     background-repeat:none;
     position: absolute;
+    transition: all 1s;
 }
