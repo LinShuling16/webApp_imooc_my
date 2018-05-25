@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-25 15:34:11
+* @Last Modified time: 2018-05-25 17:11:25
 */
 /*内容管理对象*/
 var H5 = function(){
@@ -47,6 +47,27 @@ var H5 = function(){
             case 'base':
                 component = new H5ComponentBase(name,cfg);
             break;
+
+            case 'polyline':
+                component = new H5ComponentPolyline(name,cfg);
+            break;
+
+            case 'pie':
+                component = new H5ComponentPie(name,cfg);
+            break;
+
+            case 'bar_v':
+                component = new H5ComponentBar_v(name,cfg);
+            break;
+
+            case 'bar':
+                component = new H5ComponentBar(name,cfg);
+            break;
+
+            case 'radar':
+                component = new H5ComponentRadar(name,cfg);
+            break;
+
             default:
         }
         page.append(component);

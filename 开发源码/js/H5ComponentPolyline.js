@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-21 10:23:24
+* @Last Modified time: 2018-05-25 16:21:42
 */
 /*折线图表组件对象*/
 var H5ComponentPolyline = function(name, cfg){

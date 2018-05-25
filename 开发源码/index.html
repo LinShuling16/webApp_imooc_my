@@ -206,6 +206,167 @@
                         animateOut:{opacity:0,bottom:-50},
                         delay:1000
                     })
+                .addPage()
+                    .addComponent('caption',{text:'课程分布方向'})//polyline
+                    .addComponent('polyline',{
+                        type    : 'polyline',
+                        text    : '',
+                        width   : 530,
+                        height  : 300,
+                        center  : true,
+                        data    : [
+                            ['JS', .4, '#ff7676'],
+                            ['PHP', .2],
+                            ['CSS3', .1],
+                            ['HTML5', .2],
+                            ['JQ', .35]
+                        ],
+                        css     : { top:300,opacity:0},
+                        animateIn:{opacity:1,top:240},
+                        animateOut:{opacity:0,top:300}
+                    })
+                    .addComponent('msg',{
+                        text:'前端开发课程占到40%',
+                        css:{
+                            opacity:0,
+                            top:180,
+                            textAlign:'center',
+                            width:'100%',
+                            color:'#000'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                .addPage()
+                    .addComponent('caption',{text:'移动开发课程'})//pie
+                    .addComponent('pie',{
+                        type    : 'pie',
+                        text    : '',
+                        width   : 400,
+                        height  : 400,
+                        center  : true,
+                        data    : [
+                            ['JS', .4 , '#ff7676'],
+                            ['PHP', .2],
+                            ['CSS3', .05],
+                            ['HTML5', .2],
+                            ['JQ', .15]
+                        ],
+                        css     : {top:200,opacity:0},
+                        animateIn:{opacity:1,top:200},
+                        animateOut:{opacity:0,top:100}
+                    })
+                    .addComponent('msg',{
+                        text:'移动开发中Android比例最大',
+                        css:{
+                            opacity:0,
+                            bottom:180,
+                            textAlign:'center',
+                            width:'100%',
+                            color:'#000'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                .addPage()
+                    .addComponent('caption',{text:'前端开发课程'})//bar(bar_v)
+                    .addComponent('bar',{
+                        type    : 'bar',
+                        text    : '',
+                        width   : 530,
+                        height  : 600,
+                        center  : true,
+                        data    : [
+                            ['JS', .6, '#ff7676'],
+                            ['HTML', .2], 
+                            ['HTML5', .2],
+                            ['CSS', .4],
+                            ['CSS3', .1],
+                            ['JQ', .35],
+                        ],
+                        css     : {top:250,opacity:0},
+                        animateIn:{opacity:1,top:220},
+                        animateOut:{opacity:0,top:250}
+                    })
+                    .addComponent('msg',{
+                        text:'前端开发中JavaScript比例最大',
+                        css:{
+                            opacity:0,
+                            bottom:180,
+                            textAlign:'center',
+                            width:'100%',
+                            color:'#000'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                .addPage()
+                    .addComponent('caption',{text:'前端开发课程'})//bar_v
+                    .addComponent('bar_v',{
+                        type    : 'bar_v',
+                        text    : '',
+                        width   : 530,
+                        height  : 600,
+                        center  : true,
+                        data    : [
+                            ['JS', .6, '#ff7676'],
+                            ['HTML', .2], 
+                            ['HTML5', .2],
+                            ['CSS', .4],
+                            ['CSS3', .1],
+                            ['JQ', .35],
+                        ],
+                        css     : {top:150,opacity:0},
+                        animateIn:{opacity:1,top:120},
+                        animateOut:{opacity:0,top:150}
+                    })
+                    .addComponent('msg',{
+                        text:'前端开发中JavaScript比例最大',
+                        css:{
+                            opacity:0,
+                            bottom:180,
+                            textAlign:'center',
+                            width:'100%',
+                            color:'#000'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                .addPage()
+                    .addComponent('caption',{text:'后端开发课程'})//radar
+                    .addComponent('radar',{
+                        type    : 'radar',
+                        text    : '',
+                        width   : 400,
+                        height  : 400,
+                        center  : true,
+                        data    : [
+                            ['JS', .9, '#ff7676'],
+                            ['PHP', .8],
+                            ['CSS3', .7],
+                            ['HTML5', .6],
+                            ['JQ', .5]
+                        ],
+                        css     : {top:100,opacity:0},
+                        animateIn:{opacity:1,top:200},
+                        animateOut:{opacity:0,top:100}
+                    })
+                    .addComponent('msg',{
+                        text:'前端开发中JavaScript比例最大',
+                        css:{
+                            opacity:0,
+                            bottom:180,
+                            textAlign:'center',
+                            width:'100%',
+                            color:'#000'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                .addPage()
+                    .addComponent('caption',{text:'课程报名人数过万'})//ring
+                .addPage()
+                    .addComponent('caption',{text:'课程难度分布'})//point
                 .addPage('tail')
                     .addComponent('logo',{
                         center:true,
@@ -233,7 +394,7 @@
                         css:{top:110, opacity:0, right:110},
                         animateIn:{opacity:1,top:10, right:10},
                         animateOut:{opacity:0,top:110,right:110},
-                        delay:1000
+                        delay:1500
                     })
                     .addComponent('back',{
                         center:true,
@@ -244,7 +405,7 @@
                             $.fn.fullpage.moveTo(1);
                         }
                     })
-                .loader(3);
+                .loader(6);
             }
         }
         $(function(){

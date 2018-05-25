@@ -2,10 +2,10 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-24 10:55:49
+* @Last Modified time: 2018-05-25 16:40:55
 */
 /*饼图表组件对象*/
-var H5ComponentPei = function(name, cfg){
+var H5ComponentPie = function(name, cfg){
     var component = new H5ComponentBase(name, cfg);
 
     var w = cfg.width;
