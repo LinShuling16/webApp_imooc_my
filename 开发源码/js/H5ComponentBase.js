@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-25 11:07:25
+* @Last Modified time: 2018-05-25 15:27:08
 */
 /*基本图文组件对象*/
 var H5ComponentBase = function(name, cfg){
@@ -28,7 +28,11 @@ var H5ComponentBase = function(name, cfg){
         })
     }
 
-    //其他设置
+    //点击返回首页
+    if(typeof cfg.onclick === 'function'){
+        component.on('click', cfg.onclick);
+    }
+    
     //监听当前组价对象component事件
     component.on('onLoad',function(){
        
