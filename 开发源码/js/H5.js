@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-25 10:35:56
+* @Last Modified time: 2018-05-25 11:58:46
 */
 /*内容管理对象*/
 var H5 = function(){
@@ -55,10 +55,10 @@ var H5 = function(){
         this.el.fullpage({
             /*注意这里的index是从 1 开始的*/
             onLeave : function(index, nextIndex, direction){
-                $(this).find('.h5_component').eq(index-1).trigger('onLeave');
+                $(this).find('.h5_component').trigger('onLeave');
             },
             afterLoad : function(anchorLink, index){
-                $(this).find('.h5_component').eq(index-1).trigger('onLoad');
+                $(this).find('.h5_component').trigger('onLoad');
             }
         });
         this.page[0].find('.h5_component').trigger('onLoad');
