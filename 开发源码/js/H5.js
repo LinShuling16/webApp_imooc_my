@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-25 17:29:25
+* @Last Modified time: 2018-05-26 11:13:08
 */
 /*内容管理对象*/
 var H5 = function(){
@@ -99,4 +99,6 @@ var H5 = function(){
             $.fn.fullpage.moveTo(firstPage);
         }
     }
+    this.loader = typeof H5_loading == 'function' ? H5_loading : this.loader;
+    return this;
 }
