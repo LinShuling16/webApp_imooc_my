@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-25 17:11:25
+* @Last Modified time: 2018-05-25 17:29:25
 */
 /*内容管理对象*/
 var H5 = function(){
@@ -56,6 +56,10 @@ var H5 = function(){
                 component = new H5ComponentPie(name,cfg);
             break;
 
+            case 'ring':
+                component = new H5ComponentRing(name,cfg);
+            break;
+
             case 'bar_v':
                 component = new H5ComponentBar_v(name,cfg);
             break;
@@ -66,6 +70,10 @@ var H5 = function(){
 
             case 'radar':
                 component = new H5ComponentRadar(name,cfg);
+            break;
+
+            case 'point':
+                component = new H5ComponentPoint(name,cfg);
             break;
 
             default:
