@@ -365,6 +365,114 @@
                     })
                 .addPage()
                     .addComponent('caption',{text:'课程报名人数过万'})//ring
+                    .addComponent('ring-all',{
+                        type : 'ring', 
+                        center : true,         
+                        width : 300,
+                        height : 300,
+                        data:[
+                            ['总课程' , .7  ,'#ff7676'],
+                        ],
+                        css : {
+                            top:120,
+                            opacity:0
+                        },
+                        animateIn:{opacity:1,top:200},
+                        animateOut:{opacity:0,top:100}
+                    })
+                    .addComponent('msg',{
+                        text:'不同课程报名人数超过一万占比',
+                        css:{
+                            opacity:0,
+                            top:380,
+                            textAlign:'center',
+                            width:'100%',
+                            color:'#000'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0},
+                        delay:1500
+                    })
+                    .addComponent('ring-1',{
+                        type : 'ring',         
+                        width : 160,
+                        height : 160,
+                        data:[
+                            ['前端开发' , .8  ,'darkorange'],
+                        ],
+                        css : {
+                            left:30,
+                            bottom:140,
+                            opacity:0,
+                            fontSize:'12px'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                    .addComponent('ring-2',{
+                        type : 'ring', 
+                        center: true,        
+                        width : 160,
+                        height : 160,
+                        data:[
+                            ['后端开发' , .5  ,'darkorange'],
+                        ],
+                        css : {
+                            bottom:140,
+                            opacity:0,
+                            fontSize:'12px'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                    .addComponent('ring-3',{
+                        type : 'ring',         
+                        width : 160,
+                        height : 160,
+                        data:[
+                            ['移动端开发' , .6  ,'darkorange'],
+                        ],
+                        css : {
+                            right:30,
+                            bottom:140,
+                            opacity:0,
+                            fontSize:'12px'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                    .addComponent('ring-4',{
+                        type : 'ring',         
+                        width : 160,
+                        height : 160,
+                        data:[
+                            ['PC端开发' , .4  ,'darkorange'],
+                        ],
+                        css : {
+                            right:90,
+                            bottom:60,
+                            opacity:0,
+                            fontSize:'12px'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
+                    .addComponent('ring-5',{
+                        type : 'ring',         
+                        width : 160,
+                        height : 160,
+                        data:[
+                            ['全栈开发' , .3  ,'darkorange'],
+                        ],
+                        css : {
+                            left:90,
+                            bottom:60,
+                            opacity:0,
+                            fontSize:'12px'
+                        },
+                        animateIn:{opacity:1},
+                        animateOut:{opacity:0}
+                    })
                 .addPage()
                     .addComponent('caption',{text:'课程难度分布'})//point
                 .addPage('tail')
@@ -405,7 +513,7 @@
                             $.fn.fullpage.moveTo(1);
                         }
                     })
-                .loader();
+                .loader(8);
             }
         }
         $(function(){

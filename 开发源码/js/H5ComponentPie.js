@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-25 16:40:55
+* @Last Modified time: 2018-05-26 09:41:17
 */
 /*饼图表组件对象*/
 var H5ComponentPie = function(name, cfg){
