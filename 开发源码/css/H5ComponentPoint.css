@@ -2,11 +2,11 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:23:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-18 16:36:03
+* @Last Modified time: 2018-05-26 10:26:13
 */
 /* 散点图表组件样式 */
 .h5_component_point{
-  background-color: #fff;
+    color: #fff; 
 }
 .h5_component_point .point{
     position: absolute;
