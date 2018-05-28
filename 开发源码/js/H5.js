@@ -2,7 +2,7 @@
 * @Author: linshuling
 * @Date:   2018-04-20 14:25:40
 * @Last Modified by:   linshuling
-* @Last Modified time: 2018-05-26 11:13:08
+* @Last Modified time: 2018-05-28 09:17:21
 */
 /*内容管理对象*/
 var H5 = function(){
@@ -42,7 +42,6 @@ var H5 = function(){
 
         var component; //定义一个变量，存储组件元素
         var page = this.page.slice(-1)[0];
-        console.log(page);
         switch( cfg.type ){
             case 'base':
                 component = new H5ComponentBase(name,cfg);
